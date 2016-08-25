@@ -1,0 +1,27 @@
+.parent{
+    background-color: lime;
+}
+
+.firstChild{
+    color: red;
+}
+
+.parent > .firstChild > h1:first-child{
+    color: blue;
+}
+
+.parent > .firstChild h1:first-child{
+    color: blue;
+}
+
+.parent > .firstChild h1:nth-child(3){
+    color: blue;
+}
+
+h1:hover{
+    color: brown;
+}
+
+input:disabled{
+    background-color: grey;
+}

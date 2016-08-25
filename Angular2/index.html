@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../node_modules/angular/angular.js"></script>
+    <script src="index.js"></script>
+</head>
+<body>
+
+<div ng-controller="mainCtrl">
+
+    <button ng-click="showPersonTail()">Show Template</button>
+    <button ng-click="hidePersonTail()">Hide Template</button>
+
+    <div ng-if="isShow" ng-include="'main.html'"></div>
+
+</div>
+
+
+</body>
+</html>

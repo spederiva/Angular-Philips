@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../node_modules/angular/angular.js"></script>
+    <script src="index.js"></script>
+</head>
+<body ng-controller="mainCtrl">
+
+<h1>{{fname}} {{xxx}}</h1>
+
+<div>
+    <div>
+        <label>First Name</label>
+        <input ng-model="fname">
+    </div>
+    <div>
+        <label>Last Name</label>
+        <input>
+    </div>
+    <div>
+        <label>Age</label>
+        <input>
+    </div>
+    <div>
+        <label>Preferred Color</label>
+        <input>
+    </div>
+
+    <button>Submit</button>
+</div>
+
+<div>
+    I'm [FirstName] [LastName], [Age] years old and my preferred color is [color]
+</div>
+
+
+</body>
+</html>

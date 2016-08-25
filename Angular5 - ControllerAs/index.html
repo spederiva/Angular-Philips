@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../node_modules/angular/angular.js"></script>
+    <script src="index.js"></script>
+</head>
+<body>
+
+<div ng-controller="mainCtrl as myCtrl">
+
+    <h2>Now: {{myCtrl.now}}</h2>
+
+    <button ng-click="myCtrl.showPersonTail()">Show Template</button>
+    <button ng-click="myCtrl.hidePersonTail()">Hide Template</button>
+
+    <div ng-if="myCtrl.isShow" ng-include="'main.html'"></div>
+
+    <div ng-controller="personTail as personTail" style="background-color: yellow">
+        <h1>Now {{personTail.now}}</h1>
+    </div>
+
+</div>
+
+
+</body>
+</html>

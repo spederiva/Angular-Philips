@@ -1,0 +1,27 @@
+span {
+    font-size: 30px;
+}
+
+span:first-child {
+    background-color: lime;
+    /*margin-right: 50px;*/
+}
+
+span:nth-child(2) {
+    background-color: aqua;
+    /*padding-left: 30px;*/
+}
+
+span:first-child ul {
+    display: none;
+
+    /*visibility: hidden;*/
+}
+
+span:first-child:hover ul {
+    display: inline;
+}
+
+span:last-child {
+    background-color: burlywood;
+}

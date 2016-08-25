@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../../node_modules/angular/angular.js"></script>
+    <script src="../../node_modules/angular-messages/angular-messages.js"></script>
+    <script src="index.js"></script>
+</head>
+<body>
+
+<div ng-controller="mainCtrl">
+
+    <form name="myForm" ng-submit="doSubmit()" novalidate>
+        <div>
+            Name: <input name="name" ng-model="person.name" type="text" minlength="5"/>
+            <div ng-show="myForm.name.$error.minlength">
+                no no no
+            </div>
+        </div>
+
+        <div>
+            Email: <input name="email" ng-model="person.email" type="text" required minlength="5"/>
+            <div ng-messages="myForm.email.$error" ng-if="myForm.email.$dirty">
+                <div ng-message="required">this is required</div>
+                <div ng-message="minlength">should be 5 chars</div>
+            </div>
+        </div>
+
+        <div>
+            Age: <input name="age" ng-model="person.age" type="number"/>
+            <div ng-messages="myForm.age.$error">
+                <div ng-message="number">it's not a number</div>
+            </div>
+        </div>
+
+
+        <button>Submit</button>
+    </form>
+
+</div>
+
+
+</body>
+</html>

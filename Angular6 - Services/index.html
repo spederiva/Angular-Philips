@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../node_modules/angular/angular.js"></script>
+    <script src="index.js"></script>
+    <script src="services.js"></script>
+</head>
+<body>
+
+<div ng-controller="mainCtrl as myCtrl">
+
+    <ul>
+        <li ng-repeat="p in myCtrl.list">
+            {{p.name}} - {{p.age}}
+        </li>
+    </ul>
+
+    <ul>
+        <li ng-repeat="c in myCtrl.countries">
+            <a ng-click="myCtrl.showCapital(c)">{{c}}</a>
+        </li>
+    </ul>
+
+</div>
+
+
+</body>
+</html>

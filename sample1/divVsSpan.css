@@ -1,0 +1,60 @@
+div{
+    display: inline;
+}
+
+span{
+    display: block;
+}
+
+.bigTitle{
+    font-size: 340px;
+}
+
+body{
+  margin: 20px 50px 100px 0;
+}
+
+
+h1{
+    font-size: 40px;
+}
+
+.myOwnClass{
+    font-family: "American Typewriter";
+
+    color: red !important;
+
+    font-size: 2em;
+}
+
+#secondSpan{
+    font-size: 40px;
+
+    color: darkblue;
+}
+
+#secondSpan{
+    color: yellow;
+}
+
+
+div.bigTitle{
+    font-size: 50px;
+}
+
+span.bigTitle{
+    font-size: 30px;
+}
+
+div[alt]{
+    color: lime;
+}
+
+div:hover{
+    background-color: lime  !important;
+}
+
+div{
+    background: red !important;
+}
+

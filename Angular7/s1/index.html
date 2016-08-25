@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../node_modules/angular/angular.js"></script>
+    <script src="index.js"></script>
+</head>
+<body>
+
+<div ng-controller="mainCtrl">
+    <!--<button ng-click="getData()">Get Data</button>-->
+
+    <input ng-model="filterByName.fname" />
+
+    <ul>
+        <li ng-repeat="stud in students|orderBy:'fname'|filter:filterByName">
+            {{stud.fname|uppercase}} {{stud.lname}} - {{stud.state|translateState}} - {{stud.city}}
+        </li>
+    </ul>
+
+</div>
+
+
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../node_modules/angular/angular.js"></script>
+    <script src="index.js"></script>
+</head>
+<body>
+
+<div ng-controller="mainCtrl">
+    <h1>Hello {{fistName}}</h1>
+
+    <input ng-model="fistName"/>
+
+    <button ng-click="setName()" style="background-color: yellow">Get Name</button>
+
+    <div ng-controller="personTail">
+        <h1>Welcome {{person.name}}</h1>
+
+        <h3>This is from MainCtrl {{fistName}}</h3>
+    </div>
+
+</div>
+
+
+</body>
+</html>

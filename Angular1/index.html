@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../node_modules/angular/angular.js"></script>
+    <script src="index.js"></script>
+</head>
+<body>
+
+<input ng-model="QQQ"/>
+
+<div ng-controller="mainCtrl">
+    <h1>Hello {{name}} {{QQQ}}</h1>
+
+    <input ng-model="fistName"/>
+
+    <button ng-click="setName()" style="background-color: yellow">Get Name</button>
+
+    Sample Checkbox: <input type="checkbox" ng-model="isAlive"/>
+
+    <label>Is Alive {{isAlive}}</label>
+
+    <div style="background-color: antiquewhite">
+        <h2>Hi {{propertyNoExists}}</h2>
+
+
+        <input ng-model="propertyNoExists"/>
+
+        <button ng-click="getPropertyNoExists()">Get propertyNoExists</button>
+    </div>
+
+    <button ng-click="showPersonTail()">Show Person Tail</button>
+
+    <div ng-controller="personTail" nng-if="isShow">
+        <h1>Welcome {{person.name}}</h1>
+
+        <h3>This is from MainCtrl {{fistName}}</h3>
+
+        <h3 style="background-color: yellow">{{name}}</h3>
+    </div>
+
+</div>
+
+
+</body>
+</html>
