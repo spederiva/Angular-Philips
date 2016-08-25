@@ -5,7 +5,7 @@ app
 
         students.get()
             .then(resp=> {
-                $scope.students = $filter('filter')(resp.data, 'ant');
+                $scope.students = $filter('orderBy')(resp.data, 'state', true);
             });
 
         $scope.getData = function () {

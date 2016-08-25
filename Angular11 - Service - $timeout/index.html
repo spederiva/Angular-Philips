@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../node_modules/angular/angular.js"></script>
+    <script src="index.js"></script>
+</head>
+<body>
+
+
+<div ng-controller="mainCtrl as ctrl">
+
+    <h1 ng-bind="ctrl.now">
+
+    </h1>
+
+    <button ng-click="ctrl.doSomething()">Do Something</button>
+
+</div>
+
+
+</body>
+</html>

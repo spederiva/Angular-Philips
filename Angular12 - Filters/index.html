@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../node_modules/angular/angular.js"></script>
+    <script src="index.js"></script>
+</head>
+<body>
+
+<input ng-model="QQQ"/>
+
+<div ng-controller="mainCtrl">
+    <h1>Hello {{name}} {{QQQ}}</h1>
+
+    <h2>
+
+        {{price|currency}}
+
+    </h2>
+
+</div>
+
+
+</body>
+</html>

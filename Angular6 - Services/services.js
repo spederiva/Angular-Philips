@@ -53,7 +53,8 @@ angular.module("servicesMdl", [])
 
 
         return {
-            getCapital, getCities
+            getCapital,
+            getCities
         }
 
     });

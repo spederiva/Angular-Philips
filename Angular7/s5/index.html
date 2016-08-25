@@ -14,7 +14,8 @@
     <input ng-model="filterByName.fname" />
 
     <ul>
-        <li ng-repeat="stud in students|orderBy:'fname'|filter:filterByName">
+        <li ng-repeat="stud in students|filter:filterByName">
+        <!--<li ng-repeat="stud in students|orderBy:'fname'|filter:filterByName">-->
             {{stud.fname|uppercase}} {{stud.lname}} - {{stud.state|translateState}} - {{stud.city}}
         </li>
     </ul>
