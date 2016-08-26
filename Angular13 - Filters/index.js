@@ -1,7 +1,7 @@
 var app = angular.module("app", []);
 
 app
-    .controller("mainCtrl", function (StudentSrv) {
+    .controller("mainCtrl", function (StudentSrv, $filter) {
 
         this.price = 999;
 
@@ -9,14 +9,18 @@ app
 
         StudentSrv.getStudents()
             .then((resp) => {
-                this.students = resp.data;
+                // this.students = $filter('orderBy')(resp.data, 'fname');
+                // this.students = $filter('filter')(resp.data, {state: 'ID'});
+
+                this.students
             })
     })
 
     .factory('StudentSrv', function ($http) {
-        let getStudents = function () {
-            return $http.get('../_data/data.json');
-        };
+        let
+            getStudents = function () {
+                return $http.get('../_data/data.json');
+            };
 
 
         return {
@@ -90,7 +94,7 @@ app
 
 
         return function (text) {
-            console.log(text);
+            //console.log(text);
 
             return states[text];
         }

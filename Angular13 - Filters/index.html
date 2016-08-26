@@ -24,7 +24,7 @@
     <input ng-model="ownFilter.state" />
 
     <ul>
-        <li ng-repeat="stud in ctrl.students | orderBy: 'fname' | filter: ownFilter">
+        <li ng-repeat="stud in ctrl.students">
             {{stud.fname}} {{stud.lname}} - {{stud.state | translateState}}
         </li>
     </ul>

@@ -14,29 +14,55 @@ app
 
         console.log("controller", this);
 
-        StudentSrv.getStudents()
-            .then((resp) => {
+        let refreshList = function (fieldName) {
+            StudentSrv.getStudents()
+                .then((resp) => {
 
-                console.log("into then", this);
+                    console.log("into then", this);
 
-                alert(this.greeting);
+                    alert(this.greeting);
 
 
-                this.firstRow = resp.data[0];
+                    this.firstRow = resp.data[0];
 
-                $log.log(resp.data[0]);
+                    $log.log(resp.data[0]);
 
-            })
+                })
+        }
+
         // .catch(function(e){
         //     $log.log('somethging wrong');
         // })
 
+        this.orderBy = function () {
+            refreshList('fname');
+        }
 
+        refreshList();
     })
 
-    .factory('StudentSrv', function ($http) {
+    .factory('StudentSrv', function ($http, $q, $filter) {
+        let _list = undefined;
+
         let getStudents = function () {
-            return $http.get('../_data/data.json');
+            if (_list) {
+                return _getPromise();
+            }
+
+            return _getByHttp();
+        };
+
+        let _getByHttp = function (fieldName) {
+            return $http.get('../_data/data.json')
+                .then((resp)=> {
+                    _list = resp.data;
+                })
+        };
+
+        let _getPromise = function () {
+            return $q(function (resolve, reject) {
+
+            });
         };
 
 
