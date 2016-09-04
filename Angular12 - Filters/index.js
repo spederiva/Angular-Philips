@@ -13,9 +13,16 @@ app
             })
     })
 
-    .factory('StudentSrv', function ($http) {
+    .factory('StudentSrv', function ($http, $filter) {
         let getStudents = function () {
-            return $http.get('../_data/data.json');
+            return $http.get('../_data/data.json')
+                .then((resp)=> {
+                    let d = resp.data;
+
+                    resp.data = d.map((r)=> {
+                        r.translatedState = $filter('translateState')(r.state);
+                    })
+                });
         };
 
 

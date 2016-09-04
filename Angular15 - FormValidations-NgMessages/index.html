@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../node_modules/angular/angular.js"></script>
+    <script src="../node_modules/angular-messages/angular-messages.js"></script>
+    <script src="index.js"></script>
+
+    <style>
+        /*input.ng-dirty {*/
+            /*background-color: antiquewhite;*/
+        /*}*/
+
+        /*input.ng-invalid.ng-dirty {*/
+            /*background-color: #b83f45;*/
+        /*}*/
+
+        input.ng-invalid.ng-dirty.ng-touched {
+            background-color: #b83f45;
+        }
+    </style>
+</head>
+<body>
+
+<div ng-controller="mainCtrl">
+
+    <form name="myForm" ng-submit="doSubmit()" novalidate>
+
+        <div>
+            <label for="name">Name</label>
+            <input name="name" ng-model="person.name" required minlength="3" placeholder="name"/>
+
+            <ng-messages for="myForm.name">
+                <ng-message when="$error.required">
+                    Is Required!
+                </ng-message>
+                <ng-message when="$invalid">
+                    Is Invalid
+                </ng-message>
+            </ng-messages>
+
+            <!--<div ng-messages="myForm.name.$error" ng-show="myForm.name.$dirty && myForm.name.$touched" style="color:maroon" >-->
+                <!--<div ng-message="required">You did not enter a field</div>-->
+                <!--<div ng-message="minlength">Your field is too short</div>-->
+                <!--<div ng-message="maxlength">Your field is too long</div>-->
+            <!--</div>-->
+
+            <!--<div ng-show="myForm.name.$dirty">-->
+                <!--Someone click on the field!-->
+            <!--</div>-->
+            <!--<div ng-show="myForm.name.$invalid">-->
+                <!--This field is required!-->
+            <!--</div>-->
+            <!--<div ng-show="myForm.name.$error.minlength">-->
+                <!--Min length is 3 chars!-->
+            <!--</div>-->
+        </div>
+
+        <div>
+            <label for="email">Email</label>
+            <input name="email" ng-model="person.email" required="" type="email" placeholder="email"/>
+        </div>
+
+        <div>
+            <button>Submit</button>
+        </div>
+
+
+    </form>
+
+</div>
+
+
+</body>
+</html>

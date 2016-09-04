@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../node_modules/angular/angular.js"></script>
+    <script src="index.js"></script>
+
+    <style>
+        .yellow {
+            background-color: yellow;
+        }
+
+    </style>
+</head>
+<body>
+
+<div ng-controller="mainCtrl as ctrl">
+    <button ng-click="getName()">Get Name</button>
+
+
+    <input ng-model="ctrl.name" />
+    <h1 style="background-color: aquamarine">{{ctrl.name}}</h1>
+
+    <hello-world name="ctrl.name" do-on-click="ctrl.sayHello(lastName)" >
+        oooo
+    </hello-world>
+
+    <hello-world2 first-Name="{{ctrl.name}}" do-on-click="ctrl.something(lastName)">
+        oooo
+    </hello-world2>
+
+    <!--<div hello-world="">-->
+        <!--<span>ooooo</span>-->
+
+    <!--</div>-->
+
+    <!--<div data-hello-world=""></div>-->
+
+    <!--<div x-hello-world=""></div>-->
+
+</div>
+
+
+</body>
+</html>

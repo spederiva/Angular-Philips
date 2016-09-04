@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../node_modules/angular/angular.js"></script>
+    <script src="index.js"></script>
+
+    <style>
+        .yellow {
+            background-color: yellow;
+        }
+
+    </style>
+</head>
+<body>
+
+<div ng-controller="mainCtrl as ctrl">
+    <input ng-model="ctrl.format" nng-init="ctrl.format='medium'"  />
+
+    <clock format="{{ctrl.format}}"></clock>
+
+    <clock format="H:mm:ss"></clock>
+
+    <clock></clock>
+
+</div>
+
+
+</body>
+</html>
